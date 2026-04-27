@@ -1,0 +1,6 @@
+﻿<Solution>
+  <Project Path="DOTween.Modules.csproj" />
+  <Project Path="Save.csproj" />
+  <Project Path="GamePlay.csproj" />
+  <Project Path="Menu.csproj" />
+</Solution>

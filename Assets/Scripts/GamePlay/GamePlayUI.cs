@@ -14,6 +14,11 @@ public class GamePlayUI : MonoBehaviour
         _winnerScreen.transform.DOScale(0, 0);
     }
 
+    private void OnDisable()
+    {
+        CEvents.OnGameEnded -= ShowResults;
+    }
+
     private void ShowResults(int winner)
     {
         _winnerScreen.transform.DOScale(1, 0.3f);

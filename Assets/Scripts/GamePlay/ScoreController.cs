@@ -19,6 +19,10 @@ public class ScoreController : MonoBehaviour
         _scoreText.text = "X: " + _saves.xScore + "\nO: " + _saves.oScore + "\nDraws: " + _saves.drawScore;
     }
 
+    private void OnDisable()
+    {
+        CEvents.OnGameEnded -= GameEnded;
+    }
 
     private void GameEnded(int winner)
     {

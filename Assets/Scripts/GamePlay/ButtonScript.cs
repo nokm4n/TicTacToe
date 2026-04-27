@@ -17,6 +17,11 @@ public class ButtonScript : MonoBehaviour
         CEvents.OnGameEnded += GameOver;
     }
 
+    private void OnDisable()
+    {
+        CEvents.OnGameEnded -= GameOver;
+    }
+
     public void SetSprite(Sprite sprite, int value)
     {
         _cell.sprite = sprite;
@@ -33,7 +38,8 @@ public class ButtonScript : MonoBehaviour
 
     private void GameOver(int i)
     {
-        _button.interactable = false;
+        if(_button != null)
+            _button.interactable = false;
     }
 
 }
